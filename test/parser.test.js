@@ -1,11 +1,7 @@
 const mocha = require('mocha');
 const { assert } = require('chai');
 
-const {
-  match,
-  parseParams,
-  parseFilters,
-} = require('../lib/parser');
+const { match, parseParams, parseFilters } = require('../lib/parser');
 
 mocha.describe('Parser test', () => {
   mocha.it('match with valid data', () => {
