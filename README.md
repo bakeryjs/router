@@ -1,9 +1,9 @@
 # bakeryjs/router
 
-
 ## Installation
 
 Install library via npm:
+
 ```bash
 $ npm install @bakeryjs/router
 ```
@@ -18,13 +18,14 @@ const router = require('./router')();
 // or (if it's needed to use different routers that will be isolated from each other)
 
 const Router = require('./router');
-const router = Router()
+const router = Router();
 ```
 
 Configure route (endpoint) and it's handler:
 
 ```javascript
-router.handle('/authors/:authorId/books', createBook)
+router
+  .handle('/authors/:authorId/books', createBook)
   .method('POST')
   .provideReqRes(true)
   .sendResponse(false);
@@ -44,7 +45,7 @@ const server = http.createServer(router.handler);
 
 NOTE: use '`:`' symbol to indicate a query parameter
 
-- `(property) handler: function` - get http handler 
+- `(property) handler: function` - get http handler
 
 ### Route
 
@@ -52,8 +53,7 @@ NOTE: use '`:`' symbol to indicate a query parameter
 - `(method) provideReqRes(value: boolean)` - provide `req` and `res` objects to handler function (`false` by default)
 - `(method) sendResponse(value: boolean)` - send response with function return value (`true` by default)
 
-NOTE: if it's needed to send custom response from hanlder the `provideReqRes` should be true to get `req` object and use it to prepare and send response 
-
+NOTE: if it's needed to send custom response from hanlder the `provideReqRes` should be true to get `req` object and use it to prepare and send response
 
 ## Demo
 
