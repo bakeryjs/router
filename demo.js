@@ -53,19 +53,30 @@ const deleteAuthorBook = ({ params, res }) => {
   });
 };
 
+// TEST WITH: curl -X GET "http://localhost:3001/authors?page=1&size=10"
 router.handle('/authors', getAuthors).provideReqRes(true);
+
+// TEST WITH: curl -X GET "http://localhost:3001/authors/1/books?page=1&size=10"
 router.handle('/authors/:authorId/books', getAuthorBooks).provideReqRes(true);
+
+// TEST WITH: curl -X GET "http://localhost:3001/authors/1/books/2"
 router
   .handle('/authors/:authorId/books/:bookId', getAuthorBook)
   .provideReqRes(true);
+
+// TEST WITH: curl -X POST -H "Content-Type: application/json" -d '{ "title": "test" }' http://localhost:3001/authors/1/books
 router
   .handle('/authors/:authorId/books', postAuthorBook)
   .method('POST')
   .provideReqRes(true);
+
+// TEST WITH: curl -X PUT -H "Content-Type: application/json" -d '{ "title": "test" }' http://localhost:3001/authors/1/books/2
 router
   .handle('/authors/:authorId/books/:bookId', putAuthorBook)
   .method('PUT')
   .provideReqRes(true);
+
+// TEST WITH: curl -X DELETE http://localhost:3001/authors/1/books/2
 router
   .handle('/authors/:authorId/books/:bookId', deleteAuthorBook)
   .method('DELETE')
