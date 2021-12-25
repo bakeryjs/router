@@ -3,7 +3,7 @@ const { assert } = require('chai');
 
 const { match, parseParams, parseFilters } = require('../lib/parser');
 
-mocha.describe('Parser test', () => {
+mocha.describe('Parser', () => {
   mocha.it('match with valid data', () => {
     const url = '/authors/1/books/2';
     const pattern = '/authors/:authorId/books/:bookId';

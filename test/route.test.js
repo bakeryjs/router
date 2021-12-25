@@ -3,7 +3,7 @@ const { assert } = require('chai');
 
 const Route = require('../lib/route');
 
-mocha.describe('Route test', () => {
+mocha.describe('Route', () => {
   mocha.it('validate default values', () => {
     const pattern = 'test-pattern';
     const route = Route(pattern, () => {});
