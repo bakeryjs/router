@@ -1,1 +1,1 @@
-module.exports = {}; // TODO
+module.exports = require('./lib/handler');
