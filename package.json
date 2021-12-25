@@ -23,6 +23,13 @@
     "url": "https://github.com/bakeryjs/router/issues"
   },
   "homepage": "https://github.com/bakeryjs/router#readme",
+  "keywords": [
+    "bakeryjs",
+    "http",
+    "http-server",
+    "routing",
+    "parsing"
+  ],
   "dependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.1.3"
