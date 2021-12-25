@@ -27,25 +27,27 @@ const getAuthorBook = ({ params, res }) => {
   });
 };
 
-const postAuthorBook = ({ params, res }) => {
+const postAuthorBook = ({ params, body, res }) => {
   res.setHeader('Content-Type', 'application/json');
   return JSON.stringify({
     action: 'post book by authorId',
     params,
+    body,
   });
 };
 
-const putAuthorBook = ({ params, res }) => {
+const putAuthorBook = ({ params, body, res }) => {
   res.setHeader('Content-Type', 'application/json');
-  JSON.stringify({
+  return JSON.stringify({
     action: 'put book by authorId and bookId',
     params,
+    body,
   });
 };
 
 const deleteAuthorBook = ({ params, res }) => {
   res.setHeader('Content-Type', 'application/json');
-  JSON.stringify({
+  return JSON.stringify({
     action: 'delete book by authorId and bookId',
     params,
   });
