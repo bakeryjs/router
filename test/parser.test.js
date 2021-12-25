@@ -10,6 +10,12 @@ mocha.describe('Parser test', () => {
     const actual = match(pattern, url);
     assert.isTrue(actual);
   });
+  mocha.it('match with valid data and filters', () => {
+    const url = '/authors/1/books?page=1&size=10';
+    const pattern = '/authors/:authorId/books';
+    const actual = match(pattern, url);
+    assert.isTrue(actual);
+  });
   mocha.it('match with invalid pattern', () => {
     const url = '/authors/1/books/2';
     const pattern = '/authors/:authorId';
